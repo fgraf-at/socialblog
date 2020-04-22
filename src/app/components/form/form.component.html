@@ -1,0 +1,11 @@
+<form [formGroup]="formGroup" (submit)="onSubmit()">
+  <mat-card
+    fxLayout="column"
+    fxLayoutGap="0px"
+    fxLayoutGap.gt-lg="40px"
+    fxLayoutGap.gt-md="25px"
+    fxLayoutGap.gt-sm="10px"
+    fxLayoutGap.xs="0px">
+    <ng-content></ng-content>
+  </mat-card>
+</form>

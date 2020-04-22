@@ -1,0 +1,16 @@
+<mat-card-content >
+  <mat-form-field class="form-element">
+    <mat-label>{{label}}</mat-label>
+    <textarea matInput
+              [minlength]="minLength"
+              [rows]="rows"
+              [placeholder]="placeholder"
+              [formControl]="control" >  </textarea>
+    <mat-error *ngIf="!control.valid && control.touched">
+      {{ errorMessage }}
+    </mat-error>
+
+  </mat-form-field>
+</mat-card-content>
+
+

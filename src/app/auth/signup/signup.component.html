@@ -1,0 +1,15 @@
+<app-form [formGroup]="formGroup"  (submitted)="onSubmit()">
+  <mat-card-title>SignUp Form</mat-card-title>
+  <app-input-form label="Email address"
+                  errorMessage="E-Mail is required"
+                  [control]="getEmail()"
+                  [placeholder]="getEmail().placeholder"
+  ></app-input-form>
+  <app-input-form label="Password"
+                  errorMessage="Password is required"
+                  type="password"
+                  [control]="getPassword()"
+                  [placeholder]="getPassword().placeholder"
+  ></app-input-form>
+  <app-form-actions [formGroup]="formGroup" accept="SignUp" reject="cancel"></app-form-actions>
+</app-form>
