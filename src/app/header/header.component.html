@@ -1,16 +1,21 @@
-<mat-toolbar color="primary">
-  <div class="wrapper">
-     <span routerLink="/">
-      My Posts
-    </span>
+<!-- Toolbar -->
+<div class="content-wrapper">
+  <mat-toolbar color="primary">
+    <div class="wrapper">
+      socialblog
       <ul>
         <li>
           <a routerLink=""></a>
-<!--          <a mat-button routerLink="/create"> New Post</a>-->
-          <a mat-button routerLink="/login"> Login</a>
-          <a mat-button routerLink="/signUp">Sign Up</a>
+          <a *ngIf="isAuthenticated" mat-button routerLink="/p/chat">Chat</a>
+          <a *ngIf="isAuthenticated" mat-button routerLink="/p/create"> New Post</a>
+          <a *ngIf="isAuthenticated" mat-button routerLink="/p/list"> Show Post</a>
+          <a *ngIf="!isAuthenticated" mat-button routerLink="/auth/login"> Login</a>
+          <a *ngIf="!isAuthenticated" mat-button routerLink="/auth/signUp">Sign Up</a>
+          <a (click)="onLogout()" *ngIf="isAuthenticated" mat-button>LogOut</a>
         </li>
       </ul>
-  </div>
+    </div>
 
-</mat-toolbar>
+  </mat-toolbar>
+</div>
+

@@ -55,13 +55,13 @@ server.listen(port);
 const io = socketIO(server);
 io.on('connection', (webSocket) => {
     console.log('user joined the chat');
-    webSocket.emit('message', 'a new user joined the chat');
+  webSocket.emit('state', 'a new user joined the chat');
 
     webSocket.on('disconnect', () => {
-        io.emit('message', 'user has left the chat');
-        console.log('user has left the chat');
+      io.emit('state', 'user has left the chat');
+      console.log('user has left the chat');
     });
-    webSocket.on('newMessage', (msg) => {
-        io.emit('message', msg);
-    });
+  webSocket.on('emittedMessage', (msg) => {
+    io.emit('message', msg);
+  });
 });

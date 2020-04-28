@@ -1,11 +1,14 @@
-<form [formGroup]="formGroup" (submit)="onSubmit()">
+<form (submit)="onSubmit()" [formGroup]="formGroup" [ngClass]="!wide ? 'small':'wide' ">
   <mat-card
     fxLayout="column"
     fxLayoutGap="0px"
-    fxLayoutGap.gt-lg="40px"
-    fxLayoutGap.gt-md="25px"
+    fxLayoutGap.gt-lg="50px"
+    fxLayoutGap.gt-md="20px"
     fxLayoutGap.gt-sm="10px"
-    fxLayoutGap.xs="0px">
+    fxLayoutGap.xs="0px"
+
+  >
     <ng-content></ng-content>
+
   </mat-card>
 </form>
