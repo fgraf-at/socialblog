@@ -17,4 +17,6 @@ export class FormComponent {
     constructor() {}
 
     onSubmit() {
-        this.submitted.e
+        this.submitted.emit(this.formGroup);
+    }
+}

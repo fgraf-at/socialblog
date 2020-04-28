@@ -36,4 +36,11 @@ export class ChatComponent implements OnInit {
                     formData: data.formData,
                     isOwnMessage: this.id === data.userId,
                 });
-            })
+            });
+    }
+
+    onNewMessage(formData: string) {
+        const msg = { formData: formData, userId: this.id };
+        this.socketioService.emit('emittedMessage', msg);
+    }
+}

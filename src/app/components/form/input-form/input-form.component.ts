@@ -20,4 +20,7 @@ export class InputFormComponent implements OnInit {
     @Input()
     placeholder: string;
 
-    constr
+    constructor() {}
+
+    ngOnInit() {}
+}
