@@ -1,0 +1,16 @@
+.content-wrapper{
+  width: 80%;
+  margin: auto;
+  form{
+    opacity: 0.95;
+  }
+  #videoElement {
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    box-sizing: content-box;
+  }
+
+}

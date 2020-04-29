@@ -1,0 +1,27 @@
+<div
+  class="chat-wrapper"
+     style="height: 100%"
+     fxLayout="column"
+>
+   <div id="upperPanel">
+     <ng-content></ng-content>
+   </div>
+
+    <div id="bottomPanel">
+      <app-form
+                wide="true"
+                [formGroup]="formGroup"
+                (ngSubmit)="onSubmit()">
+
+        <app-input-form
+          id="chat"
+          title=""
+          label=""
+          [control]="this.getChatInput()"
+          [placeholder]="getChatInput().placeholder"
+        >
+        </app-input-form>
+      </app-form>
+    </div>
+
+</div>
