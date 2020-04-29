@@ -1,17 +1,20 @@
 {
-  "name": "mean-course",
-  "version": "0.0.0",
+  "name": "socialblog",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:server": "nodemon ./backend/server.js"
+    "start:server": "nodemon server.js",
+    "postinstall": "ng build --output-path dist"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "^8.3.0",
+    "@angular/compiler-cli": "^8.2.14",
     "@angular/animations": "^8.2.14",
     "@angular/cdk": "^8.2.3",
     "@angular/common": "^8.2.14",
@@ -39,8 +42,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.26",
-    "@angular/cli": "^8.3.0",
-    "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
@@ -60,7 +61,7 @@
     "typescript": "^3.5.3"
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.",
-  "main": "backend/server.js",
+  "main": "server.js",
   "author": "",
   "license": "ISC"
 }
