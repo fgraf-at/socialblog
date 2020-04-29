@@ -1,13 +1,6 @@
-import {
-    Component,
-    EventEmitter,
-    OnInit,
-    Output,
-    ViewChild,
-} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ExtendedFormControl } from '../../../model/ExtendedFormControl';
-import { SocketioService } from '../../../public/services/socketio.service';
 
 @Component({
     selector: 'app-chat-layout',
@@ -19,14 +12,11 @@ export class ChatLayoutComponent implements OnInit {
     submitted = new EventEmitter<string>();
 
     formGroup: FormGroup;
-    constructor(private socketioService: SocketioService) {}
+    constructor() {}
 
     ngOnInit() {
         this.formGroup = new FormGroup({
             chatInput: new ExtendedFormControl(null, 'Message...'),
-        });
-        this.socketioService.listen('message').subscribe((data) => {
-            console.log(data);
         });
     }
 

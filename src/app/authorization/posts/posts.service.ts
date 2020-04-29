@@ -19,7 +19,6 @@ export class PostsService {
                 'http://localhost:3000/api/posts' + queryParams
             )
             .subscribe((x) => {
-                console.log(x);
                 this.posts = x.posts;
                 this.postsUpdated.next({
                     posts: [...this.posts],

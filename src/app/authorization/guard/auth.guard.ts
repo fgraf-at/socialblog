@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import {
-    CanActivate,
     ActivatedRouteSnapshot,
+    CanActivate,
+    Router,
     RouterStateSnapshot,
     UrlTree,
-    Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../auth.service';
@@ -26,8 +26,6 @@ export class AuthGuard implements CanActivate {
         return this.authService.getAuthStatusListener().pipe(
             take(1),
             map((value) => {
-                console.log('AuthGuard');
-                console.log(value);
                 if (value) {
                     return true;
                 } else {
