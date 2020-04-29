@@ -39,6 +39,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         RouterModule,
         ReactiveFormsModule,
         FlexLayoutModule,
+        CommonModule,
     ],
 })
 export class ComponentsModule {}

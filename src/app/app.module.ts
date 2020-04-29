@@ -14,9 +14,7 @@ import { MaterialModule } from './public/material.module';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { ErrorInterceptor } from './error-interceptor';
 
-import { AuthInterceptor } from './auth/auth-interceptor';
-
-import { AuthModule } from './auth/auth.module';
+import { AuthInterceptor } from './authorization/auth-interceptor';
 import { ErrorComponent } from './components/error/error.component';
 import { ComponentsModule } from './components/components.module';
 
@@ -36,7 +34,6 @@ import { ComponentsModule } from './components/components.module';
         RouterModule,
         AppRoutingModule,
         MaterialModule,
-        AuthModule,
         ComponentsModule,
     ],
     providers: [
