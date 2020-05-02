@@ -39,11 +39,7 @@ export class PostListComponent implements OnInit, OnDestroy {
                 this.totalPosts = postData.maxPosts;
             });
         this.authService.getAuthStatusListener().subscribe((x) => {
-            if (x) {
-                this.isAuthenticated = true;
-            } else {
-                this.isAuthenticated = false;
-            }
+            this.isAuthenticated = !!x;
         });
     }
 

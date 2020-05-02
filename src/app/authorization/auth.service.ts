@@ -26,10 +26,7 @@ export class AuthService {
         const authData: AuthData = { email: email, password: password };
 
         return this.http
-            .post<{ _id: string; token: string }>(
-                'http://localhost:3000/api/user/signup',
-                authData
-            )
+            .post<{ _id: string; token: string }>('api/user/signup', authData)
             .pipe(
                 tap((resData) => {
                     this.handleAuthentication(resData._id, resData.token);
@@ -49,10 +46,7 @@ export class AuthService {
     login(email: string, password: string) {
         const authData: AuthData = { email: email, password: password };
         this.http
-            .post<{ id: string; token: string }>(
-                'http://localhost:3000/api/user/login',
-                authData
-            )
+            .post<{ id: string; token: string }>('api/user/login', authData)
             .pipe(
                 tap((resData) => {
                     this.handleAuthentication(resData.id, resData.token);

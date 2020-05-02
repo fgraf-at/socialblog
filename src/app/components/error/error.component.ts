@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
+
 @Component({
     templateUrl: './error.component.html',
     styleUrls: ['./error.component.scss'],

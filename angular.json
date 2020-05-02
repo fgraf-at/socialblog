@@ -53,7 +53,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mean-course:build"
+            "browserTarget": "mean-course:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {

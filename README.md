@@ -9,8 +9,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
+Run `npm run-script start:angular` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+All Http calls will be redirected to port 3000.
 
 ## Running Node Server
 To run the node server it is required to be in the root folder. 

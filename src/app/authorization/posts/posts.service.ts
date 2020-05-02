@@ -15,9 +15,7 @@ export class PostsService {
     getPosts(pagesize: number, page: number) {
         const queryParams = `?pagesize=${pagesize}&page=${page}`;
         return this.httpClient
-            .get<{ posts: Post[]; maxPosts: number }>(
-                'http://localhost:3000/api/posts' + queryParams
-            )
+            .get<{ posts: Post[]; maxPosts: number }>('api/posts' + queryParams)
             .subscribe((x) => {
                 this.posts = x.posts;
                 this.postsUpdated.next({
@@ -38,7 +36,7 @@ export class PostsService {
             content: string;
             imagePath: string;
             currentDate: string;
-        }>('http://localhost:3000/api/posts/' + id);
+        }>('api/posts/' + id);
     }
     addPost(title: string, content: string, image: File) {
         const date = new Date().toLocaleDateString('de-AT', {
