@@ -25,5 +25,4 @@ export class ChatLayoutComponent implements OnInit {
     }
     onSubmit() {
         this.submitted.emit(this.getChatInput().value);
-    }
-}
+  
