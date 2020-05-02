@@ -38,8 +38,7 @@ app.use((req, res, next) => {
 
 app.use('/api/posts', postsRoutes);
 app.use('/api/user', userRoutes);
-var distDir = __dirname + '/dist/';
-app.use('/', express.static(distDir));
+app.use('/', express.static(path.join(__dirname, 'dist')));
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
