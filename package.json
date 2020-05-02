@@ -4,11 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build --prod --aot --output-path ./backend/dist",
+    "build": "ng build --prod --output-path ./backend/dist",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:server": "nodemon server.js",
+    "start:angular": "ng serve --proxy-config proxy.conf.json",
+
     "postinstall": "ng build --output-path ./backend/dist"
   },
   "private": true,

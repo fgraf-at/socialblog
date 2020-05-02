@@ -1,10 +1,10 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import {PostsService} from '../posts.service';
-import {PageEvent} from '@angular/material';
-import {Subscription} from 'rxjs';
-import {AuthService} from '../../auth.service';
-import {Post} from '../../../model/post.model';
+import { PostsService } from '../posts.service';
+import { PageEvent } from '@angular/material';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../../auth.service';
+import { Post } from '../../../model/post.model';
 
 @Component({
     selector: 'app-post-list',
@@ -39,11 +39,7 @@ export class PostListComponent implements OnInit, OnDestroy {
                 this.totalPosts = postData.maxPosts;
             });
         this.authService.getAuthStatusListener().subscribe((x) => {
-            if (x) {
-                this.isAuthenticated = true;
-            } else {
-                this.isAuthenticated = false;
-            }
+            this.isAuthenticated = !!x;
         });
     }
 
