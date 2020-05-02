@@ -90,8 +90,6 @@ export class AuthService {
     }
 
     private handleAuthentication(_id: string, token: string) {
-        console.log('id:');
-        console.log(_id);
         const auth = new AuthModel(_id, token);
         this.saveAuthData(_id, token);
         this.authStatusListener.next(auth);
