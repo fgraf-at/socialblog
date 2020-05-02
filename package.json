@@ -1,20 +1,24 @@
 {
-  "name": "mean-course",
-  "version": "0.0.0",
+  "name": "socialblog",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node server.js",
+    "build": "ng build --prod --aot --output-path ./backend/dist",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:server": "nodemon server.js",
+    "postinstall": "ng build --output-path ./backend/dist"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^8.2.14",
     "@angular/cdk": "^8.2.3",
+    "@angular/cli": "^8.3.0",
     "@angular/common": "^8.2.14",
     "@angular/compiler": "^8.2.14",
+    "@angular/compiler-cli": "^8.2.14",
     "@angular/core": "^8.2.14",
     "@angular/flex-layout": "^8.0.0-beta.27",
     "@angular/forms": "^8.2.14",
@@ -26,6 +30,7 @@
     "body-parser": "^1.19.0",
     "debug": "^4.1.1",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.7",
     "mongoose-unique-validator": "^2.0.3",
@@ -33,12 +38,11 @@
     "rxjs": "^6.0.0",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
+    "tslib": "^1.11.1",
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.26",
-    "@angular/cli": "^8.3.0",
-    "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",

@@ -1,0 +1,10 @@
+<app-sidebar>
+  <app-chat-layout (submitted)="onNewMessage($event)">
+    <div class="chat-content-wrapper" fxLayout="column">
+      <div *ngFor="let item of chatData" class="spacer">
+        <span [ngClass]="item.isOwnMessage ? 'right': 'left'">{{item.formData}}</span>
+      </div>
+    </div>
+
+  </app-chat-layout>
+</app-sidebar>

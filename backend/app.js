@@ -1,3 +1,5 @@
+const environment = require('./environments/environment');
+
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -9,9 +11,7 @@ const userRoutes = require('./routes/user');
 const app = express();
 
 mongoose
-    .connect(
-        'mongodb+srv://mean:9ixv2N6bqcYYjXX6@cluster0-toqzr.mongodb.net/node-angular'
-    )
+    .connect(environment.mongoDB)
     .then(() => {
         console.log('Connected to database!');
     })
@@ -38,5 +38,9 @@ app.use((req, res, next) => {
 
 app.use('/api/posts', postsRoutes);
 app.use('/api/user', userRoutes);
-
+var distDir = __dirname + '/dist/';
+app.use('/', express.static(distDir));
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 module.exports = app;

@@ -1,0 +1,23 @@
+
+.chat-wrapper{
+  position: relative;
+
+  #upperPanel{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:100px;
+    overflow:auto;
+    padding: 30px 60px;
+
+  }
+  #bottomPanel{
+    height: 100px;
+    background:#EEE;
+    position:absolute;
+    bottom: 37px;
+    left:0px;
+    right:0px;
+  }
+}
