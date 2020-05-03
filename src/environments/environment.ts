@@ -4,8 +4,7 @@
 
 export const environment = {
     production: false,
-    SOCKET_ENDPOINT:
-        'http://localhost:3000' || 'https://socialblog-app.herokuapp.com:3000',
+    SOCKET_ENDPOINT: 'http://localhost:3000',
 };
 
 /*
