@@ -3,8 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  SOCKET_ENDPOINT: "http://localhost:3000",
+    production: false,
+    SOCKET_ENDPOINT:
+        'http://localhost:3000' || 'https://socialblog-app.herokuapp.com:3000',
 };
 
 /*

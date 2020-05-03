@@ -50,10 +50,7 @@ export class PostsService {
         postData.append('image', image, title);
         postData.append('currentDate', date);
         this.httpClient
-            .post<{ message: string; post: Post }>(
-                'http://localhost:3000/api/posts',
-                postData
-            )
+            .post<{ message: string; post: Post }>('api/posts', postData)
             .subscribe((x) => {
                 this.redirectToBlog();
             });
@@ -80,16 +77,14 @@ export class PostsService {
             };
         }
         this.httpClient
-            .put('http://localhost:3000/api/posts/' + id, postData)
+            .put('api/posts/' + id, postData)
             // tslint:disable-next-line:no-shadowed-variable
             .subscribe((response) => {
                 this.redirectToBlog();
             });
     }
     deletePost(id: string) {
-        return this.httpClient.delete<{ message: string }>(
-            'http://localhost:3000/api/posts/' + id
-        );
+        return this.httpClient.delete<{ message: string }>('api/posts/' + id);
     }
     redirectToBlog() {
         this.router.navigate(['/p/list']);
