@@ -4,8 +4,14 @@ integrated real-time chat.
 This website is built with angular2 and Node.js. 
 Additionally, express is used for building a web framework and socket.io for realtime comunication.
 
+Please note that this project is currently in development. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+
+## How it works
+On the client-side users can create accounts that will be stored in a database. 
+After that, users can authenticate with the given credentials. After the login users will be redirected to 
+to a blog page where they can add and modify their posts. They can also access a chat room from there.
 
 ## Development server
 
@@ -31,9 +37,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Deploying Code
-Code can be deployed via `git push heroku master`.
 
 ## Further help
 
