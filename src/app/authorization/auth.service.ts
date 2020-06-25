@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthData } from './auth-data.model';
 import { BehaviorSubject } from 'rxjs';
-import { AuthModel } from './auth.model';
+import { AuthModel } from '../model/auth.model';
 import { tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-
+// TODO copy file to better location
 @Injectable({
     providedIn: 'root',
 })
@@ -22,11 +22,11 @@ export class AuthService {
         return this.authStatusListener;
     }
 
-    createUser(email: string, password: string) {
-        const authData: AuthData = { email: email, password: password };
-
+    createUser(email: string, password: string, nickname: string ) {
+        const authData: AuthData = { email: email, password: password, nickname: nickname };
+      console.log(authData);
         return this.http
-            .post<{ _id: string; token: string }>('api/user/signup', authData)
+            .post<{ nickname: string, _id: string; token: string }>('api/user/signup', authData)
             .pipe(
                 tap((resData) => {
                     this.handleAuthentication(resData._id, resData.token);
@@ -37,16 +37,15 @@ export class AuthService {
                     this.redirectToBlog();
                 },
                 (error) => {
-                    console.error('test');
                     console.error(error);
                 }
             );
     }
 
-    login(email: string, password: string) {
+    login( email: string, password: string) {
         const authData: AuthData = { email: email, password: password };
         this.http
-            .post<{ id: string; token: string }>('api/user/login', authData)
+            .post<{ id: string; token: string, nickname: string}>('api/user/login', authData)
             .pipe(
                 tap((resData) => {
                     this.handleAuthentication(resData.id, resData.token);

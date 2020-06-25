@@ -20,6 +20,9 @@ export class SignupComponent implements OnInit {
     ngOnInit() {
         this.authService.clearAuthData();
         this.formGroup = this.formBuilder.group({
+            nickname: new ExtendedFormControl('', 'Nickname', [
+              Validators.required,
+            ]),
             email: new ExtendedFormControl('', 'E-Mail', [
                 Validators.required,
                 Validators.email,
@@ -28,6 +31,9 @@ export class SignupComponent implements OnInit {
                 Validators.required,
             ]),
         });
+    }
+    getNickname(): ExtendedFormControl {
+      return <ExtendedFormControl>this.formGroup.get('nickname');
     }
 
     getEmail(): ExtendedFormControl {
@@ -40,8 +46,9 @@ export class SignupComponent implements OnInit {
 
     onSubmit() {
         this.authService.createUser(
-            this.getEmail().value,
-            this.getPassword().value
+           this.getEmail().value,
+            this.getPassword().value,
+            this.getNickname().value
         );
     }
 }

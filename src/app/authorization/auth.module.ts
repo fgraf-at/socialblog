@@ -6,6 +6,7 @@ import { ChatComponent } from './chat/chat.component';
 import { PostsComponent } from './posts/posts.component';
 import { AuthRoutingModule } from './auth-routing.module';
 
+// TODO copy file to better location
 @NgModule({
     declarations: [
         ChatComponent,

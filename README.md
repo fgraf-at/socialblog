@@ -13,6 +13,7 @@ On the client-side users can create accounts that will be stored in a database.
 After that, users can authenticate with the given credentials. After the login users will be redirected to 
 to a blog page where they can add and modify their posts. They can also access a chat room from there.
 
+Please note that the current project setup do not separate frontend  and backend in production. The reason for this is that CORS issues in Production can be avoided
 ## Development server
 
 Run `npm run-script start:angular` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -1,14 +1,22 @@
+// this controller is responsible for all database queries (GRUD) regarding posts.
+
+// import of the mongoose post model.
 const Post = require('../model/post');
 
+
+// function for adding posts.
 exports.addPost = (req, res, next) => {
+  //setting image path
     const url = req.protocol + '://' + req.get('host');
+    //creation of a new Post object.
     const post = new Post({
         title: req.body.title,
         content: req.body.content,
         imagePath: url + '/images/' + req.file.filename,
         currentDate: req.body.currentDate,
-        userId: req.userData.userId,
+        userId: req.userData.userId, //userdata is set in check-auth.js
     });
+    //post is saved in database.
     post.save().then((createdPost) => {
         res.status(201).json({
             message: 'Post added successfully',
@@ -19,14 +27,20 @@ exports.addPost = (req, res, next) => {
         });
     });
 };
+//This function gets all posts from the currently logged in user.
 exports.getPosts = (req, res, next) => {
     const pageSize = +req.query.pagesize;
     const currentPage = +req.query.page;
-    const postQuery = Post.find({ userId: req.userData.userId });
+
+    //query to find all posts from user. this is done via the id of the user.
+    const postQuery = Post.find({ userId: req.userData.userId }); // userData is set in check-auth.js
     let fetchedDocuments;
+
+    //paggination
     if (pageSize && currentPage + 1) {
         postQuery.skip(pageSize * currentPage).limit(pageSize);
     }
+
     postQuery
         .then((documents) => {
             fetchedDocuments = documents;

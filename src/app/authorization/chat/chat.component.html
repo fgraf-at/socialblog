@@ -1,10 +1,13 @@
 <app-sidebar>
-  <app-chat-layout (submitted)="onNewMessage($event)">
+  <app-chat-layout (submitted)="onNewMessage($event)" >
+    <div > <a mat-list-item href="#" [routerLink]="['/welcome']"></a></div>
+
     <div class="chat-content-wrapper" fxLayout="column">
+      <input type="button" value="store Friends" (click)="storeFriends()">
+      <input type="button" value="show Friends" (click)="showFriends()">
       <div *ngFor="let item of chatData" class="spacer">
-        <span [ngClass]="item.isOwnMessage ? 'right': 'left'">{{item.formData}}</span>
+        <span  [ngClass]="item.isOwnMessage ? 'right': 'left'">{{item.formData}}</span>
       </div>
     </div>
-
   </app-chat-layout>
 </app-sidebar>

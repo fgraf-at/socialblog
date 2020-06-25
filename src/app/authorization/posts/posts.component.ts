@@ -1,3 +1,4 @@
+// TODO rename file (maybe base component)
 import { Component, OnInit } from '@angular/core';
 
 @Component({

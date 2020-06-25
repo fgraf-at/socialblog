@@ -6,7 +6,10 @@
     [fixedInViewport]="true"
   >
     <mat-nav-list>
-      <a mat-list-item href="#" [routerLink]="['/welcome']"></a>
+      <div ><!--*ngFor="let user in users"-->
+        <a mat-list-item href="#" [routerLink]="['/welcome']"></a>
+      </div>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
