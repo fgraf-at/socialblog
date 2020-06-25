@@ -36,7 +36,7 @@ exports.getPosts = (req, res, next) => {
     const postQuery = Post.find({ userId: req.userData.userId }); // userData is set in check-auth.js
     let fetchedDocuments;
 
-    //paggination
+    //pagination
     if (pageSize && currentPage + 1) {
         postQuery.skip(pageSize * currentPage).limit(pageSize);
     }

@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './authentication/login/login.component';
-import { SignupComponent } from './authentication/signup/signup.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
-import { AuthGuard } from './authorization/guard/auth.guard';
+import {NgModule} from '@angular/core';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
+import {LoginComponent} from './authentication/login/login.component';
+import {SignupComponent} from './authentication/signup/signup.component';
+import {AuthenticationComponent} from './authentication/authentication.component';
+import {AuthGuard} from './authorization/guard/auth.guard';
 
 const routes: Routes = [
     {

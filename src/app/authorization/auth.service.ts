@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { AuthData } from './auth-data.model';
-import { BehaviorSubject } from 'rxjs';
-import { AuthModel } from '../model/auth.model';
-import { tap } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {AuthData} from './auth-data.model';
+import {BehaviorSubject} from 'rxjs';
+import {AuthModel} from '../model/auth.model';
+import {tap} from 'rxjs/operators';
+import {ActivatedRoute, Router} from '@angular/router';
+
 // TODO copy file to better location
 @Injectable({
     providedIn: 'root',

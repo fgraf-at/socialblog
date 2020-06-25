@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { SocketioService } from '../../public/services/socketio.service';
-import { AuthService } from '../auth.service';
-import {ChatService} from './chat.service';
+import {Component, OnInit} from '@angular/core';
+import {SocketioService} from '../../public/services/socketio.service';
+import {AuthService} from '../auth.service';
 
 @Component({
     selector: 'app-chat',
@@ -16,7 +15,6 @@ export class ChatComponent implements OnInit {
     constructor(
         private socketioService: SocketioService,
         private authService: AuthService,
-        private chatService: ChatService
     ) {}
 
     ngOnInit() {
@@ -46,10 +44,5 @@ export class ChatComponent implements OnInit {
         const msg = { formData: formData, userId: this.id };
         this.socketioService.emit('emittedMessage', msg);
     }
-    storeFriends() {
-      this.chatService.storeFriends();
-    }
-    showFriends() {
-      this.chatService.getFriends();
-    }
+
 }

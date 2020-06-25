@@ -1,5 +1,5 @@
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {MatSidenav} from '@angular/material';
 
 @Component({
     selector: 'app-sidebar',

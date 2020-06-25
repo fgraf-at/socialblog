@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs';
 
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { Post } from '../../model/post.model';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {Post} from '../../model/post.model';
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {

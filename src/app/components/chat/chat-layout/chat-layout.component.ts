@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { ExtendedFormControl } from '../../../model/ExtendedFormControl';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FormGroup} from '@angular/forms';
+import {ExtendedFormControl} from '../../../model/ExtendedFormControl';
 
 @Component({
     selector: 'app-chat-layout',

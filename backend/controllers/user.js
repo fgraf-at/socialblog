@@ -40,6 +40,32 @@ exports.createUser = (req, res, next) => {
   });
 }
 
+exports.getUserFromNickname = (req, res, next) => {
+  let returnValue = [];
+    User.find({nickname: {$regex: '^(' + req.query.nickname  + ').*$', $options: 'i'}}, function (error, user) {
+      if(error) {
+        return res.status(500).json({
+          message: error.message
+        });
+      }
+      else if (!user) {
+        return res.status(401).json({
+          message: 'Nickname could not be found: ' + req.body.nickname,
+        });
+      }else{
+
+        user.map((x)=>{
+          returnValue = {
+            nickname: x.nickname,
+            email: x.email
+          }
+        })
+        return res.status(200).json([{...returnValue}]);
+      }
+    })
+}
+
+
 exports.userLogin = (req, res) => {
     let fetchedUser;
     User.findOne({ email: req.body.email })

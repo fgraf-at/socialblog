@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
-import { PostsService } from '../posts.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { mimeType } from './mime-type.validator';
-import { ExtendedFormControl } from '../../../model/ExtendedFormControl';
-import { Post } from '../../../model/post.model';
+import {PostsService} from '../posts.service';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {mimeType} from './mime-type.validator';
+import {ExtendedFormControl} from '../../../model/ExtendedFormControl';
+import {Post} from '../../../model/post.model';
 
 @Component({
     selector: 'app-post-create',

@@ -1,11 +1,12 @@
 <!-- Toolbar -->
 <div class="content-wrapper">
   <mat-toolbar color="primary">
-    <div class="wrapper">
+    <mat-toolbar-row class="wrapper">
       socialblog
+     <app-search *ngIf="isAuthenticated" (onSearchIconClicked)="showFriends($event)" [searchResults]="searchResults"></app-search>
       <ul>
         <li>
-          <a routerLink=""></a>
+          <a routerLink="/auth/signUp"></a>
           <a *ngIf="isAuthenticated" mat-button routerLink="/p/chat">Chat</a>
           <a *ngIf="isAuthenticated" mat-button routerLink="/p/create"> New Post</a>
           <a *ngIf="isAuthenticated" mat-button routerLink="/p/list"> Show Post</a>
@@ -14,7 +15,7 @@
           <a (click)="onLogout()" *ngIf="isAuthenticated" mat-button>LogOut</a>
         </li>
       </ul>
-    </div>
+    </mat-toolbar-row>
 
   </mat-toolbar>
 </div>

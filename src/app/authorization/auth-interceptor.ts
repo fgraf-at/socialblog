@@ -1,14 +1,9 @@
 // TODO copy file to better location
-import { Injectable } from '@angular/core';
-import {
-    HttpEvent,
-    HttpHandler,
-    HttpInterceptor,
-    HttpRequest,
-} from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { AuthService } from './auth.service';
-import { mergeMap, take } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest,} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {AuthService} from './auth.service';
+import {mergeMap, take} from 'rxjs/operators';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

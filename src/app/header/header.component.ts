@@ -1,6 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AuthService } from '../authorization/auth.service';
-import { Subscription } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AuthService} from '../authorization/auth.service';
+import {Subscription} from 'rxjs';
+import {FriendsService} from '../public/services/friends.service';
 
 @Component({
     selector: 'app-header',
@@ -12,7 +13,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     isAuthenticated = false;
     private authSub: Subscription;
 
-    constructor(private authService: AuthService) {}
+    searchResults: {nickname: string, email: string}[] = [];
+
+    constructor(private authService: AuthService, private friendsService: FriendsService) {}
 
     ngOnInit(): void {
         this.authSub = this.authService
@@ -28,5 +31,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     onLogout() {
         this.authService.logOut();
+    }
+
+
+
+    storeFriends() {
+       this.friendsService.storeFriends();
+    }
+    showFriends(nickname: string) {
+       this.friendsService.getFriends(nickname).subscribe((friends) => {
+         this.searchResults = friends;
+         console.log(this.searchResults)
+      });
     }
 }

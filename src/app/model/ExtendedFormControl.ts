@@ -1,9 +1,4 @@
-import {
-  AbstractControlOptions,
-  AsyncValidatorFn,
-  FormControl,
-  ValidatorFn,
-} from "@angular/forms";
+import {AbstractControlOptions, AsyncValidatorFn, FormControl, ValidatorFn,} from '@angular/forms';
 
 export class ExtendedFormControl extends FormControl {
   private _placeholder: string;

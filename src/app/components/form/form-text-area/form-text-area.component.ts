@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ExtendedFormControl } from '../../../model/ExtendedFormControl';
+import {Component, Input, OnInit} from '@angular/core';
+import {ExtendedFormControl} from '../../../model/ExtendedFormControl';
 
 @Component({
     selector: 'app-form-text-area',

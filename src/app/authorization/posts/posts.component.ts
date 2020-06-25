@@ -1,5 +1,5 @@
 // TODO rename file (maybe base component)
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
     selector: 'app-posts',
