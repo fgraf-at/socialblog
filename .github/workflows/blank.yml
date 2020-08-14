@@ -1,0 +1,27 @@
+name: Tests
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy-test-1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm run setup tests/test-1/data.json
+      - run: |
+          git config --global user.email "nsakhilesh02@gmail.com"
+          git config --global user.name "AkhileshNS"
+          git add -A
+          git commit -m "Added data.json"
+      - uses: akhileshns/heroku-deploy@master
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "akhileshns-hd-test-1"
+          heroku_email: "nsakhilesh02@gmail.com"
+          appdir: "tests/test-1"
+          healthcheck: "https://akhileshns-hd-test-1.herokuapp.com/"
+        env:
+          HD_CHECK: "true"
+      - run: npm run test-action https://akhileshns-hd-test-1.herokuapp.com/
