@@ -51,8 +51,7 @@ app.use('/images', express.static(path.join('backend/images')));
 app.use('/api/posts', postsRoutes);
 //Route setup for user
 app.use('/api/user', userRoutes);
-//Route setup for friends
-app.use('/api/friend', friendRoutes);
+
 //make dist directory static (accessible from browser)
 app.use('/', express.static(path.join(__dirname, 'dist')));
 //This middleware loads index html. This functionality is mainly required in production.
